@@ -52,14 +52,14 @@ function TokenSelectInput({
   return (
     <div className={`border px-3 py-2.5 flex flex-col rounded-xl ${disabled ? 'bg-zinc-50' : ''}`}>
       <div className={'flex items-center justify-between'}>
-        <div className={'flex items-center gap-1 text-sm text-slate-400'}>
+        <div className={'flex items-center gap-1 text-sm text-slate-500'}>
           <span>{label}</span>
           {!!selectedCurrency && selectedCurrency !== ETHER ? (
             <CopyHelper text={selectedCurrency.address}/>
           ) : null}
         </div>
 
-        <div className={'flex items-center space-x-3 text-sm text-slate-400'}>
+        <div className={'flex items-center space-x-3 text-sm text-slate-500'}>
           <Tooltip showArrow content={formatBalance}>
             <span>{t("balance")}: {formatAmount(formatBalance)}</span>
           </Tooltip>

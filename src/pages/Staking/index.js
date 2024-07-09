@@ -102,8 +102,8 @@ function Staking() {
   }, [client, writeContractAsync])
 
   return (
-    <div className="container mx-auto max-w-lg py-8 px-4">
-      <Card>
+    <div className="container mx-auto max-w-lg py-8 px-4 ">
+      <Card className="bg-[#dfdfd8]">
         <CardHeader className="flex justify-between">
           <div className={'flex flex-col'}>
             <p className="text-md">
@@ -117,8 +117,8 @@ function Staking() {
           */}
         </CardHeader>
 
-        <CardBody className={'space-y-8'}>
-          <Account account={account}/>
+        <CardBody className={'space-y-8 bg-[#dfdfd8]'}>
+          <Account account={account} className="bg-[#dfdfd8]"/>
           <TeamName />
           <InputAmount x314={x314} amount={amount} setAmount={setAmount}/>
         </CardBody>

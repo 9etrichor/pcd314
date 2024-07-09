@@ -161,7 +161,7 @@ function Swap() {
 
   return (
     <div className="container mx-auto max-w-lg py-8 px-4">
-      <Card>
+      <Card className="bg-[#dfdfd8] border-white " shadow="md">
         <CardHeader className="flex justify-between">
           <div className={'flex flex-col'}>
             <p className="text-md">

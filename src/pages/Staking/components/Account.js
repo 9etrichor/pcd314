@@ -37,7 +37,7 @@ export const Account = ({account}) => {
   const {t} = useTranslation()
   return (
     <div
-      className="flex flex-col gap-y-3 lg:gap-y-5 bg-white rounded-xl">
+      className="flex flex-col gap-y-3 lg:gap-y-5 rounded-xl">
       <div className="inline-flex justify-center items-center">
         <span className="text-xs font-semibold uppercase text-gray-600 dark:text-gray-400">
           {t("total")}
@@ -55,7 +55,7 @@ export const Account = ({account}) => {
         }
       </div>
 
-      <dl className="flex justify-center items-center divide-x divide-gray-200 dark:divide-gray-700">
+      <dl className="flex justify-center items-center divide-x-3 divide-gray-400 dark:divide-gray-700">
         <dt className="pe-3">
           <div className={'w-full flex justify-center text-sm font-semibold text-gray-800 dark:text-gray-200'}>
             {
@@ -94,7 +94,7 @@ export const Account = ({account}) => {
         </dd>
       </dl>
 
-      <dl className="flex justify-center items-center divide-x divide-gray-200 dark:divide-gray-700">
+      <dl className="flex justify-center items-center divide-x-3 divide-gray-400/50 dark:divide-gray-700">
         <dt className="pe-3">
           <div className={'w-full flex justify-center text-sm font-semibold text-gray-800 dark:text-gray-200'}>
             {

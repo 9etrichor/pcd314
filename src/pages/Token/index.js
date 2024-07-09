@@ -69,7 +69,9 @@ const Token = () => {
             <TradeChart/>
             <Swaps/>
           </div>
-        ) : null
+        ) : (
+          <span>test</span>
+        )
       }
     </div>
   )

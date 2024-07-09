@@ -13,7 +13,7 @@ export const InputAmount = ({amount, setAmount, x314}) => {
   const balance = useCurrencyBalance(x314, address)
 
   return (
-    <div className={`border px-3 py-2.5 flex flex-col rounded-xl`}>
+    <div className={`border px-3 py-2.5 flex flex-col rounded-xl border-[#9ca3af]`}>
       <div className={'flex items-center justify-between'}>
         <div className={'flex items-center gap-1 text-sm text-slate-400'}>
           <span>{t("staking")}</span>
@@ -51,7 +51,7 @@ export const InputAmount = ({amount, setAmount, x314}) => {
         <div className={'w-full max-h-8'}>
           <input
             value={amount}
-            className={'w-full text-2xl text-right outline-none disabled:bg-transparent'}
+            className={'w-full text-2xl text-right outline-none disabled:bg-transparent bg-[#dfdfd8] border-b-2 border-b-[#9ca3af]'}
             inputMode="decimal"
             placeholder={'0'}
             onChange={(e) => setAmount(e.target.value)}

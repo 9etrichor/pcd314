@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <Header/>
-      <main className={'relative flex-grow min-h-[calc(100vh_-_65px_-_164px)] md:min-h-[calc(100vh_-_65px_-_72px)]  text-white'}>
+      <main className={'relative flex-grow min-h-[calc(100vh_-_65px_-_164px)] md:min-h-[calc(100vh_-_65px_-_72px)]  text-white bg-[#26261f]'}>
 
         {/* below is route, if you need add any route, give path and element page component */}
         <Routes>
