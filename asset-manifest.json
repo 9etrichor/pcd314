@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/pcd314/static/css/main.016c2457.css",
-    "main.js": "/pcd314/static/js/main.52f6947b.js",
+    "main.css": "/pcd314/static/css/main.957aa2ec.css",
+    "main.js": "/pcd314/static/js/main.edea0232.js",
     "static/js/13.fb566992.chunk.js": "/pcd314/static/js/13.fb566992.chunk.js",
     "static/js/206.2da7d27e.chunk.js": "/pcd314/static/js/206.2da7d27e.chunk.js",
+    "static/media/image2.png": "/pcd314/static/media/image2.559733939fb66bcf0fba.png",
+    "static/media/image1.png": "/pcd314/static/media/image1.055d5f0fa46a6639bf0a.png",
     "static/media/pcd314nft.png": "/pcd314/static/media/pcd314nft.60dc7271731f03b53815.png",
     "static/media/p314.png": "/pcd314/static/media/p314.8cd4ccdc9fd6521fd4ab.png",
     "static/media/background.jpg": "/pcd314/static/media/background.1fe26438f2c29fdaa44e.jpg",
-    "static/media/image2.png": "/pcd314/static/media/image2.7ce3e1095347b1cae158.png",
-    "static/media/image1.png": "/pcd314/static/media/image1.cdf14814bf8b35663c1c.png",
     "static/media/roboto-latin-400-normal.woff2": "/pcd314/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
     "static/media/roboto-cyrillic-ext-400-normal.woff2": "/pcd314/static/media/roboto-cyrillic-ext-400-normal.804378952da8a10faae2.woff2",
     "static/media/roboto-latin-400-normal.woff": "/pcd314/static/media/roboto-latin-400-normal.3f2b9a42f643e62a49b7.woff",
@@ -29,7 +29,7 @@
     "index.html": "/pcd314/index.html"
   },
   "entrypoints": [
-    "static/css/main.016c2457.css",
-    "static/js/main.52f6947b.js"
+    "static/css/main.957aa2ec.css",
+    "static/js/main.edea0232.js"
   ]
 }
