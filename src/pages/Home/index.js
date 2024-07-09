@@ -26,10 +26,11 @@ function Home() {
         </div>
 
         <div>
-        <Carousel useKeyboardArrows={true} className="w-full px-20">
+        <Carousel useKeyboardArrows={true} className="w-3/5 px-20">
         {images.map((URL, index) => (
           <div className="slide">
             <img alt="sample_file" src={URL} key={index} />
+            <p>{t(`news${index + 1}`)}</p>
           </div>
         ))}
         </Carousel>
@@ -45,7 +46,7 @@ function Home() {
           />
 
           <p className="w-72">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cupiditate accusantium illum ex eaque officiis, unde sint quae numquam, ea ducimus quis soluta. Quis facilis saepe nisi ipsam. Molestias, eum.
+            {t("founder")}
           </p>
         </div>
 
@@ -76,13 +77,47 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cupiditate accu
         </div>
       </div>
       
-      <div className="max-w-[100vw] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 bg-[#26261F] h-[100vh]">
+      <div className="max-w-[100vw] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 bg-[#26261F]">
         <div className="flex justify-center">
           <span className="text-3xl font-bold">-{t('founderInfo')}-</span>
         </div>
-        <div className="flex justify-evenly">
+        <div className="flex justify-evenly items-center">
           <Image width={300} alt="" src="https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg" />
-          <p className="w-80">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo culpa quaerat blanditiis non facilis veniam aliquam atque odit fuga? Deleniti voluptatum soluta maxime libero modi praesentium natus obcaecati delectus dolorum!</p>
+          <div className="w-96">
+            <p>{t("requirement")}</p>
+            <ol className="list-decimal list-outside">
+              <li><span>{t("requirement1")}</span></li>
+              <li><span>{t("requirement2")}</span></li>
+              <li>
+                <span>{t("requirement3")}</span>
+                <ul className="list-disc list-inside">
+                  <li>{t("instruction1")}</li>
+                  <li>{t("instruction2")}</li>
+                  <li>{t("instruction3")}</li>
+                  <li>{t("instruction4")}</li>
+                </ul>   
+              </li>
+            </ol>
+            <p>{t("airdrop")}</p>
+          </div>
+        </div>
+
+        <div className="flex justify-evenly items-center">
+          <div className="w-96">
+            <p>{t("founderBenefit")}</p>
+            <ol className="list-decimal list-outside">
+              <li><span>{t("benefit1")}</span></li>
+              <li><span>{t("benefit2")}</span></li>
+              <li><span>{t("benefit3")}</span></li>
+              <li><span>{t("benefit4")}</span></li>
+              <li><span>{t("benefit5")}</span></li>
+              <li><span>{t("benefit6")}</span></li>
+              <li><span>{t("benefit7")}</span></li>
+            </ol>
+            <p>{t("airdrop")}</p>
+          </div>
+          
+          <Image width={300} alt="" src="https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg" />
         </div>
       </div>
       

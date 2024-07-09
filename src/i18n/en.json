@@ -111,6 +111,26 @@
   "latestNews": "Latest News",
   "buyNow": "Buy now",
   "viewQuotes": "View quotes",
-  "founderInfo": "Founder Information"
+  "founderInfo": "Founder Information",
+  "news1": "In 2024, a new 314 protocol technology emerged, revolutionizing traditional on-chain DEX contract trading methods. It achieved decentralized peer-to-peer transactions with simple interactions, requiring no authorization of any contracts. Users buying simply transfer BNB to the contract, and selling involves transferring PCD314, eliminating the need for any SWAP transactions. This significantly lowered the barrier for ordinary users to enter Web 3.0, further promoting the prosperity of the blockchain industry. The Singapore Foundation and PCD public chain reached a consensus on cooperation in ecological construction, utilizing 314 protocol technology to incubate new ecological applications. (See PCD314 white paper for ecological planning.)",
+  "news2": "Now launching the first phase of the construction plan: Global recruitment of 299 founding members for the PCD314 community. Recruiting 199 members before the launch and 100 members after the launch.",
+  "requirement": "PCD314 Community Founders Public Recruitment Requirements:",
+  "requirement1": "Account must stake 10,000 PCD or participate in the subscription wallet staking 1,000 PCD (staking period: 30 days).",
+  "requirement2": "To participate in the community founders' presale, transfer BNB and PCD to the designated contract address. Presale contract address: (Follow PCD314 ecosystem channel).",
+  "requirement3": "Subscription Instructions:",
+  "instruction1": "For the first 1-50 subscribers, the subscription requires 2 BNB + 500 PCD.",
+  "instruction2": "For the 51-100 subscribers, the subscription requires 2.3 BNB + 500 PCD.",
+  "instruction3": "For the 101-200 subscribers, the subscription requires 2.6 BNB + 500 PCD.",
+  "instruction4": "For the 201-299 subscribers, the subscription will be decided by community vote.",
+  "airdrop": "Subscription accounts will receive an airdrop of 100,000 PCD314 tokens before the PCD314 launch. All community leaders must stake, with a staking period uniformly set at 90 days with linear release.",
+  "founder": "Becoming a founder can get 1 founder NFT identity andTCP314(Please follow and subscribe to the official social media account to get the latest number). Users who hold the founder's NFT identity can obtain all transaction dividends from TCP314 by staking tokens. The NFT founder's identity can be resold and transferred. After the NFT is transferred to the blockchain, the new address will inherit the founder's identity. As a person and as an NFT founder, you can participate in voting for proposals on the TCP314 operating ecology, and as an NFT founder, you can enjoy the dividends of chain games empowered by TCP314.",
+  "founderBenefit": "PCD314 Community Founders' Benefits:",
+  "benefit1": "Possess the specified rights within the PCD314 ecosystem mechanism.",
+  "benefit2": "Hold voting rights for community governance and PCD314 ecosystem governance.",
+  "benefit3": "Priority access to benefits of new ecosystems.",
+  "benefit4": "Entitlement to PCD314 token private sale allocation.",
+  "benefit5": "Share of all on-chain transaction fees within the PCD314 network.",
+  "benefit6": "2% earnings from all users staking in the community.",
+  "benefit7": "Community rewards ranging from 5% to 8% of the new staking rate in the community."
   
 }

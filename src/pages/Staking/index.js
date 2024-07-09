@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from "react";
 import { Button, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
-import {Select, SelectSection, SelectItem} from "@nextui-org/select";
 import useStakingAccount from "../../hooks/useStakingAccount";
 import { Account } from "./components/Account";
 import { InputAmount } from "./components/InputAmount";
@@ -16,7 +15,6 @@ import { useTranslation } from "react-i18next";
 import { FiGift } from "react-icons/fi";
 import { getReferrerFromLocal } from "../../utils/referrer";
 import { ZeroAddress } from "ethers";
-import { Share } from "./components/Share";
 
 function Staking() {
   const {t} = useTranslation()

@@ -1,5 +1,4 @@
 import { Skeleton } from "@nextui-org/react";
-import {Select, SelectSection, SelectItem} from "@nextui-org/select";
 import { formatUnits } from "viem";
 import { useTranslation } from "react-i18next";
 import { NumberCount } from "../../../components/NumberCount";

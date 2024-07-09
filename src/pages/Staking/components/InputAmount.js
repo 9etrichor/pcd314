@@ -1,7 +1,6 @@
 import { formatAmount } from "../../../utils/amount";
 import { formatUnits } from "viem";
 import { Button } from "@nextui-org/react";
-import {Select, SelectSection, SelectItem} from "@nextui-org/select";
 import { TokenLogo } from "../../../components/TokenLogo";
 import React from "react";
 import { useAccount } from "wagmi";
@@ -9,7 +8,6 @@ import useCurrencyBalance from "../../../hooks/useCurrencyBalance";
 import { useTranslation } from "react-i18next";
 
 export const InputAmount = ({amount, setAmount, x314}) => {
-  const testData = ["team1", "team2", "team3", "team4"];
   const { t } = useTranslation()
   const {address} = useAccount()
   const balance = useCurrencyBalance(x314, address)
