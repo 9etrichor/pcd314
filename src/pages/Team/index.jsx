@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Table,  TableHeader,  TableBody,  TableColumn,  TableRow,  TableCell, getKeyValue } from "@nextui-org/table";
+import {  Table,  TableHeader,  TableBody,  TableColumn,  TableRow,  TableCell, Divider} from "@nextui-org/table";
 import { useTranslation } from "react-i18next";
 function Team(){
   const {t} = useTranslation();
@@ -45,19 +45,22 @@ function Team(){
     }
   ]
   return (
-    <div className="container mx-auto max-w-full py-8 px-16">
+    <div className="container mx-auto max-w-full py-8 px-16 ">
       <Table aria-label="Example static collection table" className='w-full'>
         <TableHeader columns={columns}>
           {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
         </TableHeader>
-
-        <TableBody items={testdataRow}>
-          {(item) => (
-            <TableRow key={item.key}>
-              {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
-            </TableRow>
-          )}
-        </TableBody>
+      <TableBody items={testdataRow}>
+        {(item) => (
+          <TableRow key={item.key}>
+            <TableCell className='text-black'>{item.rank}</TableCell>
+            <TableCell  className='text-black'>{item.teamNumber}</TableCell>
+            <TableCell className='text-black'>{item.team}</TableCell>
+            <TableCell className='text-black'>{item.totalStakedAmoun}</TableCell>
+            <TableCell className='text-black'>{item.totalStakingRewards}</TableCell>
+          </TableRow>
+        )}
+      </TableBody>
       </Table>
     </div>
   )

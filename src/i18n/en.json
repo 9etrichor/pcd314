@@ -124,13 +124,17 @@
   "instruction4": "For the 201-299 subscribers, the subscription will be decided by community vote.",
   "airdrop": "Subscription accounts will receive an airdrop of 100,000 PCD314 tokens before the PCD314 launch. All community leaders must stake, with a staking period uniformly set at 90 days with linear release.",
   "founder": "Becoming a founder can get 1 founder NFT identity andTCP314(Please follow and subscribe to the official social media account to get the latest number). Users who hold the founder's NFT identity can obtain all transaction dividends from TCP314 by staking tokens. The NFT founder's identity can be resold and transferred. After the NFT is transferred to the blockchain, the new address will inherit the founder's identity. As a person and as an NFT founder, you can participate in voting for proposals on the TCP314 operating ecology, and as an NFT founder, you can enjoy the dividends of chain games empowered by TCP314.",
-  "founderBenefit": "PCD314 Community Founders' Benefits:",
-  "benefit1": "Possess the specified rights within the PCD314 ecosystem mechanism.",
+  "founderBenefit": "Community Founders' Benefits:",
+  "benefit1": "Possess the specified rights within the PCD314 ecosystem mechanism",
   "benefit2": "Hold voting rights for community governance and PCD314 ecosystem governance.",
-  "benefit3": "Priority access to benefits of new ecosystems.",
-  "benefit4": "Entitlement to PCD314 token private sale allocation.",
+  "benefit3": "Priority access to benefits of new ecosystems",
+  "benefit4": "Entitlement to PCD314 token private sale allocation",
   "benefit5": "Share of all on-chain transaction fees within the PCD314 network.",
   "benefit6": "2% earnings from all users staking in the community.",
-  "benefit7": "Community rewards ranging from 5% to 8% of the new staking rate in the community."
+  "benefit7": "Community rewards ranging from 5% to 8% of the new staking rate in the community.",
+  "totalSwapRewards": "Total swap rewards",
+  "totalBurnedAmount": "Total burned amount",
+  "marketValue": "Market value($)",
+  "24HAmount": "24H amount"
   
 }
