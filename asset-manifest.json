@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/pcd314/static/css/main.da041db1.css",
-    "main.js": "/pcd314/static/js/main.b02d8196.js",
+    "main.css": "/pcd314/static/css/main.3d228f10.css",
+    "main.js": "/pcd314/static/js/main.75d7ac33.js",
     "static/js/13.fb566992.chunk.js": "/pcd314/static/js/13.fb566992.chunk.js",
     "static/js/206.2da7d27e.chunk.js": "/pcd314/static/js/206.2da7d27e.chunk.js",
-    "static/media/image2.png": "/pcd314/static/media/image2.559733939fb66bcf0fba.png",
-    "static/media/image1.png": "/pcd314/static/media/image1.055d5f0fa46a6639bf0a.png",
+    "static/media/image2.png": "/pcd314/static/media/image2.49dc1609032cc3b59c17.png",
+    "static/media/founderInfo2.png": "/pcd314/static/media/founderInfo2.810ecd82dc3a8d450306.png",
     "static/media/pcd314nft.png": "/pcd314/static/media/pcd314nft.60dc7271731f03b53815.png",
+    "static/media/image1.png": "/pcd314/static/media/image1.405fbb2bb0e3dc487cd4.png",
+    "static/media/founderInfo1.png": "/pcd314/static/media/founderInfo1.3d8fe0ceeaf4253b86be.png",
     "static/media/p314.png": "/pcd314/static/media/p314.8cd4ccdc9fd6521fd4ab.png",
     "static/media/background.jpg": "/pcd314/static/media/background.1fe26438f2c29fdaa44e.jpg",
     "static/media/roboto-latin-400-normal.woff2": "/pcd314/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -29,7 +31,7 @@
     "index.html": "/pcd314/index.html"
   },
   "entrypoints": [
-    "static/css/main.da041db1.css",
-    "static/js/main.b02d8196.js"
+    "static/css/main.3d228f10.css",
+    "static/js/main.75d7ac33.js"
   ]
 }
