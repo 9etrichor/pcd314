@@ -1,4 +1,4 @@
-import { Link, Button, Divider } from "@nextui-org/react";
+import { Link, Button, Divider, Progress } from "@nextui-org/react";
 import { useTranslation } from "react-i18next";
 import {Image} from "@nextui-org/image";
 import { Carousel } from "react-responsive-carousel";
@@ -9,6 +9,7 @@ import founderInfo1 from "../../assets/images/founderInfo1.png"
 import founderInfo2 from "../../assets/images/founderInfo2.png"
 import PCD from "../../assets/images/pcd314nft.png"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { px } from "framer-motion";
 
       //className="relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('assets/images/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/squared-bg-element.svg')]">
 function Home() {
@@ -58,44 +59,63 @@ function Home() {
         </div>
       </div>
       
-      <div className="max-w-[100vw] mx-auto px-4 h-[100vh] sm:px-6 lg:px-8 pt-24 pb-10 bg-[#595954]">
-        <div className="flex justify-center items-center gap-8">
+      <div className="max-w-[100vw] mx-auto h-[100vh] sm:px-6 lg:px-[7.5%] pt-24 pb-10  bg-[#595954]">
+        <div className="flex items-center gap-8 w-full">
           <Image
-            width={300}
+            width={1800}
             alt=""
             src={PCD}
           />
 
-          <p className="w-72">
-            {t("founder")}
-          </p>
+          <div>
+            <h2 className="font-bold text-2xl">Founder's Seat Identity (NFT)</h2>
+            <p className="">{t("founder")}</p>
+            <p className="mt-8">
+              <span>current price</span>
+              <span className="font-extrabold text-4xl ml-2 mr-8">3.693BNB</span>
+              <span className="">Floor price</span>
+              <span className="font-extrabold text-4xl ml-2">3.140BNB</span>
+            </p>
+
+            <div className="flex justify-between mb-4 mt-4">
+              <Progress 
+                label={`Seats Remaining : ${220}`}
+                size="lg"
+                value={220}
+                maxValue={1000}
+                formatOptions={{style: "percent"}}
+                showValueLabel={true}
+                className="max-w-full"/>
+            </div>
+
+            <div className="flex gap-2">
+              <Button
+                href="#"
+                as={Link}
+                variant="bordered"
+                showAnchorIcon
+                radius="none"
+                className="text-[#d6d6d6] border-4 w-[50%]"
+                size="lg">
+                  <span className="text-lg">{t("buyNow")}</span>
+              </Button> 
+
+              <Button
+                href="#"
+                as={Link}
+                variant="bordered"
+                showAnchorIcon
+                radius="none"
+                className="text-[#d6d6d6] border-4 w-[50%]"
+                size="lg">
+                  <span className="text-lg">{t("viewQuotes")}</span>
+              </Button> 
+        </div>
+          </div>
         </div>
 
-        <p>remain peopl progress bar???</p>
 
-        <div className="flex justify-center gap-2">
-          <Button
-            href="#"
-            as={Link}
-            variant="bordered"
-            showAnchorIcon
-            radius="none"
-            className="text-[#d6d6d6] border-4"
-            size="lg">
-            <span className="text-lg">{t("buyNow")}</span>
-          </Button> 
 
-          <Button
-            href="#"
-            as={Link}
-            variant="bordered"
-            showAnchorIcon
-            radius="none"
-            className="text-[#d6d6d6] border-4"
-            size="lg">
-            <span className="text-lg">{t("viewQuotes")}</span>
-          </Button> 
-        </div>
       </div>
       
       <div className="max-w-[100vw] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 bg-[#26261F]">
