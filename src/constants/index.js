@@ -21,6 +21,7 @@ export const SWAP_ROUTER = '0x7A8B32f4B513996f45503dF1138C64D11F91b42D'
  * @type {string}
  */
 export const X314 = '0x003144B41d9743D402c5bdF3f72Ca0f327aA0Bca'
+// this is token address
 
 /**
  * Stake Pool

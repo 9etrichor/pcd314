@@ -134,6 +134,8 @@
   "totalSwapRewards": "全网交易分红",
   "totalBurnedAmount": "全网销毁数量",
   "marketValue": "市值($)",
-  "24HAmount": "24H额($)"
+  "24HAmount": "24H额($)",
+  "selectToken": "选择代币",
+  "selectPeriod": "选择周期"
 
 }

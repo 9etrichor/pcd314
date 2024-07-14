@@ -17,9 +17,16 @@ import { getReferrerFromLocal } from "../../utils/referrer";
 import { ZeroAddress } from "ethers";
 
 function Staking() {
+  // for text translation
   const {t} = useTranslation()
+
+  // new object, construtor:(chain id, address, decimals, symbol, names)
   const x314 = new Token(56, X314, 18, 'X314', 'X-314')
+
+  // store the input value in Staking text input part
   const [amount, setAmount] = useState('')
+
+  //???
   const account = useStakingAccount()
 
   const [depositing, setDepositing] = useState(false)
@@ -125,7 +132,8 @@ function Staking() {
         
         <CardFooter className={'space-y-4 flex-col'}>
           <div className={'w-full flex space-x-4'}>
-            {
+
+            { //this is approve button
               allowance <= 0 || (amount > 0 && !isNaN(Number(amount)) && parseUnits(amount, x314.decimals) > allowance) ? (
                 <Button
                   color={'warning'}
@@ -151,7 +159,8 @@ function Staking() {
                 </Button>
               )
             }
-            {
+
+            { // this is receive button
               account && account.total > 0 ? (
                 <Button
                   color={'secondary'}
@@ -168,7 +177,7 @@ function Staking() {
             }
           </div>
 
-          {
+          { // lottery button
             account ? (
               <Button
                 color={'danger'}

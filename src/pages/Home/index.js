@@ -9,9 +9,12 @@ import founderInfo1 from "../../assets/images/founderInfo1.png"
 import founderInfo2 from "../../assets/images/founderInfo2.png"
 import PCD from "../../assets/images/pcd314nft.png"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { px } from "framer-motion";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import bgAnime from "../../assets/anime/bgAnime2.lottie"
 
       //className="relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('assets/images/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/squared-bg-element.svg')]">
+
+      //style={{ backgroundImage: `url(${background})` }}
 function Home() {
   const images = [
     image1,
@@ -21,9 +24,17 @@ function Home() {
 
   return (
     <div
-      className=""
+      className="relative"
     >
-      <div className={"max-w-[100vw] mx-auto px-4  sm:px-6 lg:px-8 pt-12 pb-10 bg-cover"} style={{ backgroundImage: `url(${background})` }}>
+      <div className="w-full h-screen  mx-auto left-0 right-0  absolute">
+        <DotLottieReact
+          src={bgAnime} 
+          loop
+          autoplay
+          className="w-full h-full absolute"
+        />
+      </div>
+      <div className={"relative  z-10  max-w-[100vw] mx-auto px-4  sm:px-6 lg:px-8 pt-12 pb-10 "} >  
         
         <div className="flex justify-center gap-16">
           <div className="">
@@ -59,7 +70,7 @@ function Home() {
         </div>
       </div>
       
-      <div className="max-w-[100vw] mx-auto h-[100vh] sm:px-6 lg:px-[7.5%] pt-24 pb-10  bg-[#595954]">
+      <div className="relative max-w-[100vw] mx-auto h-[100vh] sm:px-6 lg:px-[7.5%] pt-24 pb-10  bg-[#595954]">
         <div className="flex items-center gap-8 w-full">
           <Image
             width={1800}
@@ -118,7 +129,7 @@ function Home() {
 
       </div>
       
-      <div className="max-w-[100vw] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 bg-[#26261F]">
+      <div className=" relative max-w-[100vw] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 bg-[#26261F]">
         <div className="flex justify-center">
           <span className="text-3xl font-bold">-{t('founderInfo')}-</span>
         </div>

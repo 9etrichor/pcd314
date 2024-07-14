@@ -135,6 +135,8 @@
   "totalSwapRewards": "Total swap rewards",
   "totalBurnedAmount": "Total burned amount",
   "marketValue": "Market value($)",
-  "24HAmount": "24H amount"
+  "24HAmount": "24H amount",
+  "selectToken": "Select a token",
+  "selectPeriod": "Select a period"
   
 }
