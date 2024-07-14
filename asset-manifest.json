@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pcd314/static/css/main.eb7d0483.css",
-    "main.js": "/pcd314/static/js/main.70e45574.js",
+    "main.css": "/pcd314/static/css/main.969cadff.css",
+    "main.js": "/pcd314/static/js/main.99f1a45a.js",
     "static/js/13.fb566992.chunk.js": "/pcd314/static/js/13.fb566992.chunk.js",
     "static/js/206.2da7d27e.chunk.js": "/pcd314/static/js/206.2da7d27e.chunk.js",
     "static/media/image2.png": "/pcd314/static/media/image2.49dc1609032cc3b59c17.png",
@@ -26,12 +26,13 @@
     "static/media/roboto-vietnamese-400-normal.woff2": "/pcd314/static/media/roboto-vietnamese-400-normal.3230f9b040f3c630e0c3.woff2",
     "static/media/roboto-vietnamese-400-normal.woff": "/pcd314/static/media/roboto-vietnamese-400-normal.e0e8ba725ebd107367a8.woff",
     "static/media/tokenPocketWallet.svg": "/pcd314/static/media/tokenPocketWallet.ac2c2355141b949d192992f8dd1271dc.svg",
+    "static/media/bgAnime2.lottie": "/pcd314/static/media/bgAnime2.7372197dd5f31ab6ed81.lottie",
     "static/media/roboto-greek-ext-400-normal.woff2": "/pcd314/static/media/roboto-greek-ext-400-normal.169619821ea93019d1bb.woff2",
     "static/media/roboto-greek-ext-400-normal.woff": "/pcd314/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "index.html": "/pcd314/index.html"
   },
   "entrypoints": [
-    "static/css/main.eb7d0483.css",
-    "static/js/main.70e45574.js"
+    "static/css/main.969cadff.css",
+    "static/js/main.99f1a45a.js"
   ]
 }
