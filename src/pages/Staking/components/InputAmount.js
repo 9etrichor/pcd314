@@ -8,15 +8,10 @@ import useCurrencyBalance from "../../../hooks/useCurrencyBalance";
 import { useTranslation } from "react-i18next";
 import {Select, SelectSection, SelectItem} from "@nextui-org/react";
 
-export const InputAmount = ({amount, setAmount, x314}) => {
+export const InputAmount = ({amount, setAmount, x314, tokenValue, periodValue, setTokenValue, setPeriodValue}) => {
 
-  // safe token and period selected value;
-  const [tokenValue, setTokenValue] = useState("");
-  const [periodValue, setPeriodValue] = useState("");
-
-  // select token and period handler
+  // select token and period handler, handle value change
   const handleTokenChange = (e) => { setTokenValue(e.target.value) };
-  const handlePeriodChange = (e) => { setPeriodValue(e.target.value) };
   
   // for translation text
   const { t } = useTranslation()
@@ -34,17 +29,15 @@ export const InputAmount = ({amount, setAmount, x314}) => {
   ] 
 
   // for the select period part
-  const periodDatas = [
-    {key: "7day", label: "7day"},
-    {key: "30day", label: "30day"},
-    {key: "90day", label: "90day"}
-  ];
 
   return (
     <div className={`border px-3 py-2.5 flex flex-col rounded-xl border-[#9ca3af]`}>
       <div className={'flex items-center justify-between'}>
         <div className={'flex items-center gap-1 text-sm text-slate-400'}>
           <span>{t("staking")}</span>
+          <p>
+            {tokenValue}
+          </p>
         </div>
 
         <div className={'flex items-center space-x-3 text-sm text-slate-400'}>
@@ -79,20 +72,6 @@ export const InputAmount = ({amount, setAmount, x314}) => {
         ))}
       </Select>
       
-      {/* select period part */}
-      <Select 
-        label={t("selectPeriod")} 
-        className="max-w-48 pr-4" 
-        selectedKeys={[periodValue]}
-        onChange={handlePeriodChange}
-      >
-        {periodDatas.map((animal) => (
-          <SelectItem key={animal.key}>
-            {animal.label}
-          </SelectItem>
-        ))}
-      </Select>
-
         <div className={'w-full max-h-8'}>
           <input
             value={amount}

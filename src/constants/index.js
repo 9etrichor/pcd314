@@ -27,4 +27,4 @@ export const X314 = '0x003144B41d9743D402c5bdF3f72Ca0f327aA0Bca'
  * Stake Pool
  * @type {string}
  */
-export const STAKING = '0x3d44873Dc874D6e3173f8B53E89807Cabb3C1965'
+export const STAKING = '0xc32e97562a640285a6e8376c8fdbbc7781763050'

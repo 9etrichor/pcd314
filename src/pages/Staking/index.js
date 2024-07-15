@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { Button, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import { Button, Card, CardBody, CardFooter, CardHeader, Select, SelectItem } from "@nextui-org/react";
 import useStakingAccount from "../../hooks/useStakingAccount";
 import { Account } from "./components/Account";
 import { InputAmount } from "./components/InputAmount";
@@ -19,6 +19,18 @@ import { ZeroAddress } from "ethers";
 function Staking() {
   // for text translation
   const {t} = useTranslation()
+
+  const periodDatas = [
+    {key: "7day", label: "7day"},
+    {key: "30day", label: "30day"},
+    {key: "90day", label: "90day"}
+  ];
+
+  const handlePeriodChange = (e) => { setPeriodValue(e.target.value) };
+
+ // safe token and period selected value;
+  const [tokenValue, setTokenValue] = useState("");
+  const [periodValue, setPeriodValue] = useState("");
 
   // new object, construtor:(chain id, address, decimals, symbol, names)
   const x314 = new Token(56, X314, 18, 'X314', 'X-314')
@@ -126,8 +138,20 @@ function Staking() {
 
         <CardBody className={'space-y-8 bg-[#dfdfd8]'}>
           <Account account={account} className="bg-[#dfdfd8]"/>
+          <Select 
+          label={t("selectPeriod")} 
+          className="max-w-48 pr-4" 
+          selectedKeys={[periodValue]}
+          onChange={handlePeriodChange}
+          >
+        {periodDatas.map((animal) => (
+          <SelectItem key={animal.key}>
+            {animal.label}
+          </SelectItem>
+        ))}
+      </Select>
           <TeamName />
-          <InputAmount x314={x314} amount={amount} setAmount={setAmount}/>
+          <InputAmount x314={x314} amount={amount} setAmount={setAmount} tokenValue={tokenValue} setTokenValue={setTokenValue} periodValue={periodValue} setPeriodValue={setPeriodValue} />
         </CardBody>
         
         <CardFooter className={'space-y-4 flex-col'}>

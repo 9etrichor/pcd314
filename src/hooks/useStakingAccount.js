@@ -7,6 +7,7 @@ import { STAKING } from "../constants";
 function useStakingAccount() {
   const {address} = useAccount()
   const config = useConfig()
+  console.log(config)
   const [value, setValue] = useState(null)
   const [refreshTime, setRefreshTime] = useState(Date.now())
 
