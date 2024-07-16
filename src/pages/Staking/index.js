@@ -20,9 +20,14 @@ function Staking() {
   // for text translation
   const {t} = useTranslation()
 
+  const tokenDatas = [
+    {key: "pcd ", label: "PCD"},
+    {key: "pcd314", label: "PCD314"}
+  ] 
+
   const [stackData, setStackData] = useState({status: 0});
 
-  /*useEffect(() => {
+  useEffect(() => {
     fetch("http://127.0.0.1:8000/deposit/0xc32e97562a640285a6e8376c8fdbbc7781763050")
       .then((res) => {
         return res.json();
@@ -31,7 +36,7 @@ function Staking() {
         setStackData(data)
         console.log(data)
       })
-  },[]); */
+  },[]); 
 
   const periodDatas = [
     {key: "7day", label: "7day"},
@@ -39,6 +44,8 @@ function Staking() {
     {key: "90day", label: "90day"}
   ];
   
+  // select token and period handler, handle value change
+  const handleTokenChange = (e) => { setTokenValue(e.target.value) };
   const handlePeriodChange = (e) => { setPeriodValue(e.target.value) };
 
  // safe token and period selected value;
@@ -150,8 +157,23 @@ function Staking() {
         </CardHeader>
 
         <CardBody className={'space-y-8 bg-[#dfdfd8]'}>
-          <Account account={account} className="bg-[#dfdfd8]"/>
-          <Select 
+          <Account account={account} stackData={stackData} className="bg-[#dfdfd8]"/>
+          <div>
+      {/*  select token part*/}
+      <Select 
+        label={t("selectToken")} 
+        className="max-w-48 pr-4"
+        selectedKeys={[tokenValue]}
+        onChange={handleTokenChange}
+      >
+        {tokenDatas.map((animal) => (
+          <SelectItem key={animal.key}>
+            {animal.label}
+          </SelectItem>
+        ))}
+      </Select>
+
+        <Select 
           label={t("selectPeriod")} 
           className="max-w-48 pr-4" 
           selectedKeys={[periodValue]}
@@ -162,7 +184,9 @@ function Staking() {
             {animal.label}
           </SelectItem>
         ))}
-          </Select>
+       </Select>
+          </div>
+
           <TeamName />
           <InputAmount x314={x314} amount={amount} setAmount={setAmount} tokenValue={tokenValue} setTokenValue={setTokenValue} periodValue={periodValue} setPeriodValue={setPeriodValue} />
         </CardBody>

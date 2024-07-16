@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { NumberCount } from "../../../components/NumberCount";
 import { useMemo } from "react";
 
-export const Account = ({account}) => {
+export const Account = ({account, stackData}) => {
 
   const total = useMemo(() => {
     if (account) {

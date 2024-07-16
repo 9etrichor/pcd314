@@ -26,8 +26,7 @@ function Header() {
   
   //show the top nav bar, can switch page by clicked
   const menuItems = [
-    {path: '/snapped', label: t("snapped")},
-    {path: '/', label: t("home")},
+    //{path: '/snapped', label: t("snapped")},
     {path: '/swap', label: t("swap")},
     {path: `/markets/${tokenAddress}`, label: t("markets")},
     {path: '/staking', label: t("staking")},
@@ -67,6 +66,13 @@ function Header() {
       </NavbarContent>
 
       <NavbarContent className="hidden md:flex gap-4 justify-start items-center" justify={"center"}>
+          <NavbarItem key={t("home")}>
+            <Link size={'sm'} color={location.pathname === "/" ? 'primary' : "foreground"}
+            isBlock
+            href={'/'}>
+              {t("home")}
+            </Link>
+          </NavbarItem>
         {menuItems.map((item) => (
           <NavbarItem key={item.label}>
             <Link size={'sm'} color={location.pathname.indexOf(item.path) >= 0 ? 'primary' : 'foreground'} isBlock

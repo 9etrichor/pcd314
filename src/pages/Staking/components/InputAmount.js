@@ -10,8 +10,7 @@ import {Select, SelectSection, SelectItem} from "@nextui-org/react";
 
 export const InputAmount = ({amount, setAmount, x314, tokenValue, periodValue, setTokenValue, setPeriodValue}) => {
 
-  // select token and period handler, handle value change
-  const handleTokenChange = (e) => { setTokenValue(e.target.value) };
+
   
   // for translation text
   const { t } = useTranslation()
@@ -23,10 +22,7 @@ export const InputAmount = ({amount, setAmount, x314, tokenValue, periodValue, s
   const balance = useCurrencyBalance(x314, address)
 
   // for the select token part
-  const tokenDatas = [
-    {key: "pcd ", label: "PCD"},
-    {key: "pcd314", label: "PCD314"}
-  ] 
+
 
   // for the select period part
 
@@ -58,19 +54,7 @@ export const InputAmount = ({amount, setAmount, x314, tokenValue, periodValue, s
       </div>
 
       <div className={'flex justify-between items-center my-2 w-full'}>
-      {/*  select token part*/}
-      <Select 
-        label={t("selectToken")} 
-        className="max-w-48 pr-4"
-        selectedKeys={[tokenValue]}
-        onChange={handleTokenChange}
-      >
-        {tokenDatas.map((animal) => (
-          <SelectItem key={animal.key}>
-            {animal.label}
-          </SelectItem>
-        ))}
-      </Select>
+
       
         <div className={'w-full max-h-8'}>
           <input
