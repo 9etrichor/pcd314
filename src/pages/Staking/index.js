@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { Button, Card, CardBody, CardFooter, CardHeader, Select, SelectItem } from "@nextui-org/react";
 import useStakingAccount from "../../hooks/useStakingAccount";
 import { Account } from "./components/Account";
@@ -20,12 +20,25 @@ function Staking() {
   // for text translation
   const {t} = useTranslation()
 
+  const [stackData, setStackData] = useState({status: 0});
+
+  /*useEffect(() => {
+    fetch("http://127.0.0.1:8000/deposit/0xc32e97562a640285a6e8376c8fdbbc7781763050")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setStackData(data)
+        console.log(data)
+      })
+  },[]); */
+
   const periodDatas = [
     {key: "7day", label: "7day"},
     {key: "30day", label: "30day"},
     {key: "90day", label: "90day"}
   ];
-
+  
   const handlePeriodChange = (e) => { setPeriodValue(e.target.value) };
 
  // safe token and period selected value;
@@ -149,7 +162,7 @@ function Staking() {
             {animal.label}
           </SelectItem>
         ))}
-      </Select>
+          </Select>
           <TeamName />
           <InputAmount x314={x314} amount={amount} setAmount={setAmount} tokenValue={tokenValue} setTokenValue={setTokenValue} periodValue={periodValue} setPeriodValue={setPeriodValue} />
         </CardBody>
