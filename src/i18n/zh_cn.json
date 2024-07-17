@@ -101,7 +101,7 @@
   "sell": "卖",
   "snapped": "抢购创始人",
   "lockDividends": "锁仓分红",
-  "proportion": "Proportion",
+  "proportion": "分紅占比",
   "rank": "排名",
   "teamNumber": "团队编号",
   "team": "团队",
@@ -136,6 +136,7 @@
   "marketValue": "市值($)",
   "24HAmount": "24H额($)",
   "selectToken": "选择代币",
-  "selectPeriod": "选择周期"
+  "selectPeriod": "选择周期",
+  "lockDividend": "锁仓分红"
 
 }

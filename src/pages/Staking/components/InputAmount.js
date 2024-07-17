@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/react";
 import React from "react";
 import { useState } from "react";
 import { useAccount } from "wagmi";
-import useCurrencyBalance from "../../../hooks/useCurrencyBalance";
+import useCurrencyPcdBalance from "../../../hooks/useCurrencyPcdBalance";
 import useCurrency314Balance from "../../../hooks/useCurrency314Balance";
 import { useTranslation } from "react-i18next";
 import {Select, SelectSection, SelectItem} from "@nextui-org/react";
@@ -20,7 +20,7 @@ export const InputAmount = ({amount, setAmount, x314, tokenValue, tokenAddress, 
   const {address} = useAccount()
 
   // for the balance value
-  const balanceOfPcd = useCurrencyBalance(x314, address)
+  const balanceOfPcd = useCurrencyPcdBalance(x314, address)
   const balanceOfPcd314 = useCurrency314Balance(x314, address)
 
   let balance = balanceOfPcd;

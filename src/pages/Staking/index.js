@@ -7,7 +7,7 @@ import { TeamName } from "./components/TeamName";
 import { STAKING, X314 } from "../../constants";
 import { Token } from "../../constants/types";
 import useAllowance from "../../hooks/useAllowance";
-import { useClient, useWriteContract } from "wagmi";
+import { useAccount, useClient, useWriteContract } from "wagmi";
 import stakingAbi from "../../assets/abis/Staking.json";
 import { parseUnits } from "viem";
 import { waitForTransactionReceipt } from "viem/actions";
@@ -25,10 +25,49 @@ function Staking() {
     {key: "pcd314", label: "PCD314"}
   ] 
 
-  const [stackData, setStackData] = useState({status: 0});
+  const testData = {
+    "status": 1,
+    "msg": {
+      "address": "abc",
+      "total": 1000,
+      "released": 20,
+      "relay": 10,
+      "last_release": "2024-07-13T15:17:07",
+      "duration": 7,
+      "dividend": 9,
+      "refer" : "abc",
+      "token": 1,
+      "team_id": 1
+    }
+  }
+  const [stackData, setStackData] = useState(testData);
+
+ // safe token and period selected value;
+  const [tokenValue, setTokenValue] = useState("");
+  const [periodValue, setPeriodValue] = useState(0);
+
+  //???
+  const account = useStakingAccount()
+  const {address} = useAccount()
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/deposit/0xc32e97562a640285a6e8376c8fdbbc7781763050")
+    const url = "http://127.0.0.1:8000/deposit"
+    let token, duration
+    duration = periodValue
+    if(tokenValue === "pcd314") {
+      token = 1
+    } else {
+      token = 0;
+    }
+    console.log(address)
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        "token": token,
+        "duration": duration,
+        "a": address
+      })
+    })
       .then((res) => {
         return res.json();
       })
@@ -36,12 +75,12 @@ function Staking() {
         setStackData(data)
         console.log(data)
       })
-  },[]); 
+  },[tokenValue, periodValue, address]);
 
   const periodDatas = [
-    {key: "7day", label: "7day"},
-    {key: "30day", label: "30day"},
-    {key: "90day", label: "90day"}
+    {key: 7, label: "7day"},
+    {key: 30, label: "30day"},
+    {key: 90, label: "90day"}
   ];
   
   // select token and period handler, handle value change
@@ -50,10 +89,7 @@ function Staking() {
   };
   const handlePeriodChange = (e) => { setPeriodValue(e.target.value) };
 
- // safe token and period selected value;
-  const [tokenValue, setTokenValue] = useState("");
-  const [periodValue, setPeriodValue] = useState("");
-  const [tokenAddress, setTokenAddress] = useState("0x1b3Ee2ff73F1A20D92e3b1Fa70a8908D96FE34f6");
+
 
   // new object, construtor:(chain id, address, decimals, symbol, names)
   const x314 = new Token(56, X314, 18, 'X314', 'X-314')
@@ -61,8 +97,7 @@ function Staking() {
   // store the input value in Staking text input part
   const [amount, setAmount] = useState('')
 
-  //???
-  const account = useStakingAccount()
+
 
   const [depositing, setDepositing] = useState(false)
   const [claiming, setClaiming] = useState(false)
@@ -191,7 +226,7 @@ function Staking() {
           </div>
 
           <TeamName />
-          <InputAmount x314={x314} amount={amount} setAmount={setAmount} tokenValue={tokenValue} setTokenValue={setTokenValue} periodValue={periodValue} setPeriodValue={setPeriodValue} tokenAddress={tokenAddress} />
+          <InputAmount x314={x314} amount={amount} setAmount={setAmount} tokenValue={tokenValue} setTokenValue={setTokenValue} periodValue={periodValue} setPeriodValue={setPeriodValue}  />
         </CardBody>
         
         <CardFooter className={'space-y-4 flex-col'}>

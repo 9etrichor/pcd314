@@ -25,7 +25,7 @@ function useCurrencyBalance(currency, address) {
         } else {
           setValue(await readContract(client, {
             abi: ERC20,
-            address: currency.address,
+            address: "0x1b3Ee2ff73F1A20D92e3b1Fa70a8908D96FE34f6",
             functionName: 'balanceOf',
             args: [address]
           }))

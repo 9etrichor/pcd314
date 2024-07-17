@@ -137,6 +137,7 @@
   "marketValue": "Market value($)",
   "24HAmount": "24H amount",
   "selectToken": "Select a token",
-  "selectPeriod": "Select a period"
+  "selectPeriod": "Select a period",
+  "lockDividend": "LOCK DIVIDEND"
   
 }

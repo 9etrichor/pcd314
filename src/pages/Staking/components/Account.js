@@ -6,26 +6,52 @@ import { useMemo } from "react";
 
 export const Account = ({account, stackData}) => {
 
-  const total = useMemo(() => {
-    if (account) {
-      return parseFloat(formatUnits(account.total, 18))
+  // sum = locked + released
+  const sum = useMemo(() => {
+    if (stackData.status == 1) {
+    //  return parseFloat(formatUnits(stackData.msg.total, 18))
+      return stackData.msg.total + stackData.msg.released
     }
     return 0
-  }, [account])
+  }, [stackData])
+
+  const available = useMemo(() => {
+    if (stackData.status == 1) {
+      return stackData.msg.relay
+    }
+    return 0
+  }, [stackData])
 
   const locked = useMemo(() => {
-    if (account) {
-      return parseFloat(formatUnits(account.total - account.released - account.pending, 18))
+    if (stackData.status == 1) {
+      return stackData.msg.total
     }
     return 0
-  }, [account])
+  }, [stackData])
 
-  const release = useMemo(() => {
-    if (account) {
-      return parseFloat(formatUnits(account.released + account.pending, 18))
+  const released = useMemo(() => {
+    if (stackData.status == 1) {
+      return stackData.msg.released
     }
     return 0
-  }, [account])
+
+  }, [stackData])
+
+  const proportion = useMemo(() => {
+    if (stackData.status == 1) {
+      return stackData.msg.released
+    }
+    return 0
+
+  }, [stackData])
+
+  const propReleased = useMemo(() => {
+    if (stackData.status == 1) {
+      return stackData.msg.dividend
+    }
+    return 0
+
+  }, [stackData])
 
   const pending = useMemo(() => {
     if (account) {
@@ -47,8 +73,8 @@ export const Account = ({account, stackData}) => {
       <div
         className="flex justify-center text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-800 dark:text-gray-200">
         {
-          account ? (
-            <NumberCount value={total} decimals={3}/>
+          stackData.status == 1? (
+            <NumberCount value={sum} decimals={3}/>
           ) : (
             <Skeleton className={'h-10 my-1 rounded-lg w-1/3'}/>
           )
@@ -59,7 +85,7 @@ export const Account = ({account, stackData}) => {
         <dt className="pe-3">
           <div className={'w-full flex justify-center text-sm font-semibold text-gray-800 dark:text-gray-200'}>
             {
-              account ? (
+              stackData.status == 1? (
                 <NumberCount value={locked} decimals={3}/>
               ) : (
                 <Skeleton className={'h-3 my-1 rounded-lg w-2/3'}/>
@@ -71,8 +97,8 @@ export const Account = ({account, stackData}) => {
         <dd className="text-start px-3">
           <div className={'w-full flex justify-center text-sm font-semibold text-gray-800 dark:text-gray-200'}>
             {
-              account ? (
-                <NumberCount value={release} decimals={3}/>
+              stackData.status == 1? (
+                <NumberCount value={released} decimals={3}/>
               ) : (
                 <Skeleton className={'h-3 my-1 rounded-lg w-2/3'}/>
               )
@@ -83,8 +109,8 @@ export const Account = ({account, stackData}) => {
         <dd className="text-start ps-3">
           <div className={'w-full flex justify-center text-sm font-semibold text-gray-800 dark:text-gray-200'}>
             {
-              account ? (
-                <NumberCount value={pending} decimals={5}/>
+              stackData.status == 1? (
+                <NumberCount value={available} decimals={5}/>
               ) : (
                 <Skeleton className={'h-3 my-1 rounded-lg w-2/3'}/>
               )
@@ -94,12 +120,18 @@ export const Account = ({account, stackData}) => {
         </dd>
       </dl>
 
+      <div className="inline-flex justify-center items-center">
+        <span className="text-xs font-semibold uppercase text-gray-600 dark:text-gray-400">
+          {t("lockDividend")}
+        </span>
+      </div>
+
       <dl className="flex justify-center items-center divide-x-3 divide-gray-400/50 dark:divide-gray-700">
         <dt className="pe-3">
           <div className={'w-full flex justify-center text-sm font-semibold text-gray-800 dark:text-gray-200'}>
             {
-              account ? (
-                <NumberCount value={locked} decimals={3}/>
+              stackData.status == 1? (
+                <NumberCount value={proportion} decimals={3}/>
               ) : (
                 <Skeleton className={'h-3 my-1 rounded-lg w-2/3'}/>
               )
@@ -110,8 +142,8 @@ export const Account = ({account, stackData}) => {
         <dd className="text-start px-3">
           <div className={'w-full flex justify-center text-sm font-semibold text-gray-800 dark:text-gray-200'}>
             {
-              account ? (
-                <NumberCount value={release} decimals={3}/>
+              stackData.status == 1 ? (
+                <NumberCount value={propReleased} decimals={3}/>
               ) : (
                 <Skeleton className={'h-3 my-1 rounded-lg w-2/3'}/>
               )
