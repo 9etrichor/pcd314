@@ -4,7 +4,7 @@ import { useClient } from "wagmi";
 import { getBalance, readContract } from "viem/actions";
 import ERC20 from '../assets/abis/ERC20.json'
 
-function useCurrencyBalance(currency, address) {
+function useCurrency314Balance(currency, address) {
   const [value, setValue] = useState(0n)
   const client = useClient()
 
@@ -25,7 +25,7 @@ function useCurrencyBalance(currency, address) {
         } else {
           setValue(await readContract(client, {
             abi: ERC20,
-            address: "0x1b3Ee2ff73F1A20D92e3b1Fa70a8908D96FE34f6",
+            address: "0xDbD299db8F81dB509F76C47ffDCcB87E29088888",
             functionName: 'balanceOf',
             args: [address]
           }))
@@ -42,8 +42,7 @@ function useCurrencyBalance(currency, address) {
     }
   }, [currency, address, client, refreshTime]);
 
-  console.log(value)
   return value
 }
 
-export default useCurrencyBalance
+export default useCurrency314Balance

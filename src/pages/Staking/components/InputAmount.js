@@ -5,10 +5,11 @@ import React from "react";
 import { useState } from "react";
 import { useAccount } from "wagmi";
 import useCurrencyBalance from "../../../hooks/useCurrencyBalance";
+import useCurrency314Balance from "../../../hooks/useCurrency314Balance";
 import { useTranslation } from "react-i18next";
 import {Select, SelectSection, SelectItem} from "@nextui-org/react";
 
-export const InputAmount = ({amount, setAmount, x314, tokenValue, periodValue, setTokenValue, setPeriodValue}) => {
+export const InputAmount = ({amount, setAmount, x314, tokenValue, tokenAddress, periodValue, setTokenValue, setPeriodValue}) => {
 
 
   
@@ -19,12 +20,15 @@ export const InputAmount = ({amount, setAmount, x314, tokenValue, periodValue, s
   const {address} = useAccount()
 
   // for the balance value
-  const balance = useCurrencyBalance(x314, address)
+  const balanceOfPcd = useCurrencyBalance(x314, address)
+  const balanceOfPcd314 = useCurrency314Balance(x314, address)
 
-  // for the select token part
-
-
-  // for the select period part
+  let balance = balanceOfPcd;
+  if(tokenValue === "pcd") {
+    balance = balanceOfPcd;
+  } else if(tokenValue === "pcd314") {
+    balance = balanceOfPcd314
+  }
 
   return (
     <div className={`border px-3 py-2.5 flex flex-col rounded-xl border-[#9ca3af]`}>

@@ -45,12 +45,15 @@ function Staking() {
   ];
   
   // select token and period handler, handle value change
-  const handleTokenChange = (e) => { setTokenValue(e.target.value) };
+  const handleTokenChange = (e) => { 
+    setTokenValue(e.target.value);
+  };
   const handlePeriodChange = (e) => { setPeriodValue(e.target.value) };
 
  // safe token and period selected value;
   const [tokenValue, setTokenValue] = useState("");
   const [periodValue, setPeriodValue] = useState("");
+  const [tokenAddress, setTokenAddress] = useState("0x1b3Ee2ff73F1A20D92e3b1Fa70a8908D96FE34f6");
 
   // new object, construtor:(chain id, address, decimals, symbol, names)
   const x314 = new Token(56, X314, 18, 'X314', 'X-314')
@@ -158,7 +161,7 @@ function Staking() {
 
         <CardBody className={'space-y-8 bg-[#dfdfd8]'}>
           <Account account={account} stackData={stackData} className="bg-[#dfdfd8]"/>
-          <div>
+          <div className="flex justify-center">
       {/*  select token part*/}
       <Select 
         label={t("selectToken")} 
@@ -188,7 +191,7 @@ function Staking() {
           </div>
 
           <TeamName />
-          <InputAmount x314={x314} amount={amount} setAmount={setAmount} tokenValue={tokenValue} setTokenValue={setTokenValue} periodValue={periodValue} setPeriodValue={setPeriodValue} />
+          <InputAmount x314={x314} amount={amount} setAmount={setAmount} tokenValue={tokenValue} setTokenValue={setTokenValue} periodValue={periodValue} setPeriodValue={setPeriodValue} tokenAddress={tokenAddress} />
         </CardBody>
         
         <CardFooter className={'space-y-4 flex-col'}>
