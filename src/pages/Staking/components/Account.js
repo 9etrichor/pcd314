@@ -126,7 +126,7 @@ export const Account = ({account, stackData}) => {
         </span>
       </div>
 
-      <dl className="flex justify-center items-center divide-x-3 divide-gray-400/50 dark:divide-gray-700">
+      <dl className="flex w-full justify-center items-center divide-x-3 divide-gray-400/50 dark:divide-gray-700">
         <dt className="pe-3">
           <div className={'w-full flex justify-center text-sm font-semibold text-gray-800 dark:text-gray-200'}>
             {
@@ -139,7 +139,7 @@ export const Account = ({account, stackData}) => {
           </div>
           <span className="block text-sm text-gray-500 text-center">{t("proportion")}</span>
         </dt>
-        <dd className="text-start px-3">
+        <dd className=" px-3">
           <div className={'w-full flex justify-center text-sm font-semibold text-gray-800 dark:text-gray-200'}>
             {
               stackData.status == 1 ? (

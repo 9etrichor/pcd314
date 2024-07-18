@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 import { FiGift } from "react-icons/fi";
 import { getReferrerFromLocal } from "../../utils/referrer";
 import { ZeroAddress } from "ethers";
+import moment from "moment";
 
 function Staking() {
   // for text translation
@@ -24,6 +25,23 @@ function Staking() {
     {key: "pcd ", label: "PCD"},
     {key: "pcd314", label: "PCD314"}
   ] 
+
+  const isOnclaimBtn = () => {
+    const data = stackData
+    if(data.detail) {return true}
+    if(data.status == 0) {return true}
+
+    const nowTime = moment()
+    const startTime = moment(data.msg.start_time)
+    const newTime = nowTime.subtract(data.msg.duration, 'days')
+    // condition: now time - duration >= start time
+    return !(newTime >= startTime)
+  }
+
+  const isOnStart = () => {
+    //return !isOnclaimBtn || stackData.status === 0;
+    return !stackData.status == 0 || !isOnclaimBtn()
+  }
 
   const testData = {
     "status": 1,
@@ -37,9 +55,11 @@ function Staking() {
       "dividend": 9,
       "refer" : "abc",
       "token": 1,
-      "team_id": 1
+      "team_id": 1,
+      "start_time": "2024-07-13T15:17:07"
     }
   }
+
   const [stackData, setStackData] = useState(testData);
 
  // safe token and period selected value;
@@ -75,7 +95,7 @@ function Staking() {
         setStackData(data)
         console.log(data)
       })
-  },[tokenValue, periodValue, address]);
+  },[tokenValue, periodValue, address]); 
 
   const periodDatas = [
     {key: 7, label: "7day"},
@@ -231,67 +251,31 @@ function Staking() {
         
         <CardFooter className={'space-y-4 flex-col'}>
           <div className={'w-full flex space-x-4'}>
-
-            { //this is approve button
-              allowance <= 0 || (amount > 0 && !isNaN(Number(amount)) && parseUnits(amount, x314.decimals) > allowance) ? (
-                <Button
-                  color={'warning'}
-                  className={'w-full'}
-                  size={'lg'}
-                  variant={'flat'}
-                  isLoading={approving}
-                  onClick={approve}
-                >
-                  {t("approve")}
-                </Button>
-              ) : (
-                <Button
+            <Button
                   color={'primary'}
                   className={'w-full disabled:pointer-events-none disabled:grayscale'}
                   size={'lg'}
                   variant={'flat'}
                   isLoading={depositing}
                   onClick={onDeposit}
-                  disabled={amount <= 0}
+                  disabled={isOnStart()}
                 >
                   {account && account.total > 0 ? t("add") : t("start")}
-                </Button>
-              )
-            }
+            </Button>
 
-            { // this is receive button
-              account && account.total > 0 ? (
-                <Button
+            <Button
                   color={'secondary'}
                   className={'w-full disabled:pointer-events-none disabled:grayscale'}
                   size={'lg'}
                   variant={'flat'}
                   isLoading={claiming}
-                  disabled={account.pending <= 0}
+                  disabled={isOnclaimBtn()}
                   onClick={onClaim}
                 >
                   {t("receive")}
-                </Button>
-              ) : null
-            }
+            </Button>
           </div>
 
-          { // lottery button
-            account ? (
-              <Button
-                color={'danger'}
-                className={'w-full disabled:pointer-events-none disabled:grayscale'}
-                size={'lg'}
-                variant={'flat'}
-                isLoading={loitering}
-                disabled={account.hasLotteryToday || !account.lotteryEnable}
-                onClick={onLottery}
-                startContent={<FiGift/>}
-              >
-                {t("lottery")}
-              </Button>
-            ) : null
-          }
         </CardFooter>
 
       </Card>
