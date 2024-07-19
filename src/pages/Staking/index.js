@@ -28,6 +28,7 @@ function Staking() {
 
   const isOnclaimBtn = () => {
     const data = stackData
+    console.log(data)
     if(data.detail) {return true}
     if(data.status == 0) {return true}
 
@@ -70,7 +71,7 @@ function Staking() {
   const account = useStakingAccount()
   const {address} = useAccount()
 
-  useEffect(() => {
+  /*useEffect(() => {
     const url = "http://127.0.0.1:8000/deposit"
     let token, duration
     duration = periodValue
@@ -95,7 +96,7 @@ function Staking() {
         setStackData(data)
         console.log(data)
       })
-  },[tokenValue, periodValue, address]); 
+  },[tokenValue, periodValue, address]); */
 
   const periodDatas = [
     {key: 7, label: "7day"},

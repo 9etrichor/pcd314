@@ -5,7 +5,7 @@ import { NumberCount } from "../../../components/NumberCount";
 import { useMemo } from "react";
 
 export const Account = ({account, stackData}) => {
-
+  console.log(stackData)
   // sum = locked + released
   const sum = useMemo(() => {
     if (stackData.status == 1) {
