@@ -21,11 +21,13 @@ function Staking() {
   // for text translation
   const {t} = useTranslation()
 
+  // UI, for select token part
   const tokenDatas = [
     {key: "pcd ", label: "PCD"},
     {key: "pcd314", label: "PCD314"}
   ] 
 
+  // if return true: user can click the receive button(on claim btn)
   const isOnclaimBtn = () => {
     const data = stackData
     console.log(data)
@@ -39,11 +41,13 @@ function Staking() {
     return !(newTime >= startTime)
   }
 
+  // if return true: user can click the start mining button
   const isOnStart = () => {
     //return !isOnclaimBtn || stackData.status === 0;
     return !stackData.status == 0 || !isOnclaimBtn()
   }
 
+  // test data of fetch database data
   const testData = {
     "status": 1,
     "msg": {
@@ -61,6 +65,7 @@ function Staking() {
     }
   }
 
+  // store the data fetch from database. initial data is testData
   const [stackData, setStackData] = useState(testData);
 
  // safe token and period selected value;
@@ -69,18 +74,23 @@ function Staking() {
 
   //???
   const account = useStakingAccount()
+
+  // user address
   const {address} = useAccount()
 
-  /*useEffect(() => {
+  // this part is fetch data from backend database. Change whenever user select token and period
+  useEffect(() => {
     const url = "http://127.0.0.1:8000/deposit"
     let token, duration
     duration = periodValue
+    
     if(tokenValue === "pcd314") {
       token = 1
     } else {
       token = 0;
     }
-    console.log(address)
+
+    //send token and duration value to you and then fetch data
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
@@ -96,8 +106,9 @@ function Staking() {
         setStackData(data)
         console.log(data)
       })
-  },[tokenValue, periodValue, address]); */
+  },[tokenValue, periodValue, address]); 
 
+  // UI, for select period part
   const periodDatas = [
     {key: 7, label: "7day"},
     {key: 30, label: "30day"},
@@ -118,20 +129,21 @@ function Staking() {
   // store the input value in Staking text input part
   const [amount, setAmount] = useState('')
 
-
-
+  // these part IDK
   const [depositing, setDepositing] = useState(false)
   const [claiming, setClaiming] = useState(false)
   const [loitering, setLoitering] = useState(false)
   const {writeContractAsync} = useWriteContract()
   const client = useClient()
 
+  // IDK also
   const {
     value: allowance,
     approve,
     loading: approving
   } = useAllowance(x314, STAKING)
 
+  // start mining button click handler
   const onDeposit = useCallback(async () => {
     setDepositing(true)
     try {
@@ -158,6 +170,7 @@ function Staking() {
     }
   }, [amount, client, writeContractAsync])
 
+  // receive button click handler
   const onClaim = useCallback(async () => {
     setClaiming(true)
     try {
@@ -178,6 +191,7 @@ function Staking() {
     }
   }, [client, writeContractAsync])
 
+  // IDK
   const onLottery = useCallback(async () => {
     setLoitering(true)
     try {
@@ -202,6 +216,8 @@ function Staking() {
   return (
     <div className="container mx-auto max-w-lg py-8 px-4 ">
       <Card className="bg-[#dfdfd8]">
+
+        {/* this part only UI */}
         <CardHeader className="flex justify-between">
           <div className={'flex flex-col'}>
             <p className="text-md">
@@ -215,11 +231,12 @@ function Staking() {
           */}
         </CardHeader>
 
+        
         <CardBody className={'space-y-8 bg-[#dfdfd8]'}>
           <Account account={account} stackData={stackData} className="bg-[#dfdfd8]"/>
           <div className="flex justify-center">
-      {/*  select token part*/}
-      <Select 
+            {/*  select token part*/}
+            <Select 
         label={t("selectToken")} 
         className="max-w-48 pr-4"
         selectedKeys={[tokenValue]}
@@ -230,9 +247,9 @@ function Staking() {
             {animal.label}
           </SelectItem>
         ))}
-      </Select>
-
-        <Select 
+            </Select>
+      
+            <Select 
           label={t("selectPeriod")} 
           className="max-w-48 pr-4" 
           selectedKeys={[periodValue]}
@@ -243,7 +260,7 @@ function Staking() {
             {animal.label}
           </SelectItem>
         ))}
-       </Select>
+            </Select>
           </div>
 
           <TeamName />
